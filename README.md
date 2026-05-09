@@ -112,3 +112,5 @@ See the [LGTM Security Watchdog Action README](./lgtm-action/README.md) for usag
 ## 📝 License
 
 This project is licensed under the MIT License.
+
+
