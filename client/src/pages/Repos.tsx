@@ -1280,6 +1280,13 @@ export default function Repos() {
                         <ExternalLink className="w-3.5 h-3.5" />
                         View on GitHub
                       </a>
+                      <button
+                        onClick={() => navigate(`/repos/${repo._id}/graph`)}
+                        className="clay-btn px-3 py-2 text-xs text-secondary flex items-center gap-1.5 flex-1 justify-center"
+                      >
+                        <Database className="w-3.5 h-3.5" />
+                        Knowledge Graph
+                      </button>
                     </div>
                   </div>
                 )}

@@ -30,6 +30,7 @@ import LgtmSecurity from "./pages/LgtmSecurity";
 import LgtmSecurityRepoDetail from "./pages/LgtmSecurityRepoDetail";
 import LgtmSecurityPolicy from "./pages/LgtmSecurityPolicy";
 import LgtmSecurityTokens from "./pages/LgtmSecurityTokens";
+import KnowledgeGraph from "./pages/KnowledgeGraph";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import ErrorBoundary from "./components/ui/ErrorBoundary";
 
@@ -221,6 +222,14 @@ function App() {
                     <DashboardLayout>
                       <MyPRDetail />
                     </DashboardLayout>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/repos/:repoId/graph"
+                element={
+                  <ProtectedRoute>
+                    <KnowledgeGraph />
                   </ProtectedRoute>
                 }
               />
