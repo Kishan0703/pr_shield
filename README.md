@@ -6,7 +6,8 @@ LGTM is a full-stack, AI-powered Pull Request review platform and security watch
 
 - **🤖 AI-Powered Code Reviews**: Uses advanced LLMs (OpenAI, Anthropic, Gemini) to analyze PRs and provide actionable feedback.
 - **🌳 Context-Aware Indexing**: Leverages AST (Abstract Syntax Trees) via Tree-sitter to understand repository context.
-- **🔒 Security Watchdog**: Scans for vulnerabilities and includes a custom GitHub Action to gate CI/CD pipelines based on security findings.
+- **� Knowledge Graph Visualization**: Interactive graph visualization of your codebase showing file relationships, imports, dependencies, and code coupling metrics.
+- **�🔒 Security Watchdog**: Scans for vulnerabilities and includes a custom GitHub Action to gate CI/CD pipelines based on security findings.
 - **⚡ Real-time Dashboard**: A rich web interface for monitoring repo health, commit diffs, review feeds, and analytics.
 - **💳 Payment Integration**: Powered by Dodo Payments for SaaS billing.
 
@@ -104,7 +105,24 @@ The server utilizes BullMQ and Redis for heavy lifting, split across three prima
 2. **Review Worker**: Evaluates PRs using configured AI models and posts feedback directly to GitHub.
 3. **Security Worker**: Scans the codebase for potential vulnerabilities and enforces security policies.
 
-## 🛡️ GitHub Action Integration
+## � Knowledge Graph
+
+LGTM provides an interactive Knowledge Graph visualization that maps out your entire codebase as a dynamic network. The graph shows:
+
+- **Nodes**: Individual files and components with metadata including:
+  - Programming language
+  - File size
+  - Coupling score (dependency density)
+  - Churn score (change frequency)
+
+- **Edges**: Relationships between files including:
+  - Import/Export dependencies
+  - Function calls
+  - Inheritance relationships
+  
+This visualization helps identify tightly coupled modules, circular dependencies, and architectural patterns at a glance. The graph is cached for performance and provides interactive exploration capabilities.
+
+## �🛡️ GitHub Action Integration
 
 LGTM includes a native GitHub Action (`lgtm-action`) to integrate security gates directly into your CI pipeline. 
 See the [LGTM Security Watchdog Action README](./lgtm-action/README.md) for usage instructions.
